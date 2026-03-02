@@ -15,3 +15,12 @@ class Itembiblioteca(ABC):
             self.__disponivel = False
             return True
         return False
+
+    def get_ano(self):
+        return self.__ano
+    
+    def set_ano(self, valor):
+        if valor > 0:
+            self.__ano = valor
+        else:
+            raise ValueError("Ano inválido!")
