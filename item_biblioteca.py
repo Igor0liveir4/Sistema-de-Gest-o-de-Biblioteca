@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 class Itembiblioteca(ABC):
-    def __init__(self, codigo, titulo, ano, disponivel):
+    def __init__(self, codigo: str, titulo: str, ano: int, disponivel: bool):
         self.__codigo = codigo
         self.__titulo = titulo
         self.__ano = ano
@@ -24,3 +24,14 @@ class Itembiblioteca(ABC):
             self.__ano = valor
         else:
             raise ValueError("Ano inválido!")
+    
+class Livro(ImportError):
+    def __init__(self, codigo, titulo, ano, disponivel, autor, num_paginas):
+        super().__init__(codigo, titulo, ano, disponivel)
+        self.__autor = autor
+        self.__num_pagina = num_paginas
+
+    def exibir_detalhes(self):
+        print(f"Tipo: Livro")
+        print(f"Autor: {self.__autor}")
+        print(f"Páginas: {self.__num_paginas}")
